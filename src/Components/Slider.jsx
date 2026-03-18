@@ -26,9 +26,6 @@ const Slider = () => {
       slidesPerView={1}
       navigation
       pagination={{ clickable: true }}
-      //   scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log("slide change")}
       className="h-[90vh]"
       autoplay={{
         delay: 3000,
@@ -38,9 +35,9 @@ const Slider = () => {
     >
       <SwiperSlide className="relative">
         {/* image */}
-        <div className="image">
+        <div className="image absolute inset-0">
           <img
-            className="object-cover object-center"
+            className="w-full h-full object-cover object-center"
             src="/src/assets/first.jpg"
             alt=""
           />
@@ -62,9 +59,9 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide className="relative">
         {/* image */}
-        <div className="image">
+        <div className="image absolute inset-0">
           <img
-            className="object-cover object-center"
+            className="object-cover object-center w-full h-full"
             src="/src/assets/second.jpg"
             alt=""
           />
@@ -86,9 +83,9 @@ const Slider = () => {
       </SwiperSlide>
       <SwiperSlide className="relative">
         {/* image */}
-        <div className="image">
+        <div className="image absolute inset-0">
           <img
-            className="object-cover object-center"
+            className="w-full h-full object-cover object-center"
             src="/src/assets/third.jpg"
             alt=""
           />
@@ -113,3 +110,4 @@ const Slider = () => {
 };
 
 export default Slider;
+ 

@@ -1,0 +1,122 @@
+[
+  {
+    "toyId": 1,
+    "toyName": "Remote Control Adventure Jeep",
+    "sellerName": "Speedy Wheels BD",
+    "sellerEmail": "sales@speedywheels.com",
+    "price": 45.5,
+    "rating": 4.6,
+    "availableQuantity": 12,
+    "description": "A rugged 4x4 RC jeep with real working headlights and off-road tires. Perfect for outdoor backyard racing.",
+    "pictureURL": "https://i.ibb.co.com/G3b8wxM7/2150905417.png",
+    "subCategory": "Remote Control Cars"
+  },
+  {
+    "toyId": 2,
+    "toyName": "STEM Discovery Microscope",
+    "sellerName": "Little Scientist Lab",
+    "sellerEmail": "explore@littlescientist.com",
+    "price": 38.0,
+    "rating": 4.7,
+    "availableQuantity": 25,
+    "description": "An educational microscope kit for curious minds. Includes prepared slides and tools to explore the microscopic world.",
+    "pictureURL": "https://i.ibb.co.com/FLJxqgpW/2150905433.png",
+    "subCategory": "Educational"
+  },
+  {
+    "toyId": 3,
+    "toyName": "Classic Wooden Building Blocks",
+    "sellerName": "EcoToys Bangladesh",
+    "sellerEmail": "info@ecotoys.com",
+    "price": 29.99,
+    "rating": 4.8,
+    "availableQuantity": 50,
+    "description": "Natural wooden blocks designed to improve fine motor skills and spatial awareness in toddlers.",
+    "pictureURL": "https://i.ibb.co.com/Q7Sf8t0d/2150915336.png",
+    "subCategory": "Building Blocks"
+  },
+  {
+    "toyId": 4,
+    "toyName": "Plush Cuddle Bear",
+    "sellerName": "Softies Kingdom",
+    "sellerEmail": "hello@softies.com",
+    "price": 20.0,
+    "rating": 4.9,
+    "availableQuantity": 100,
+    "description": "Ultra-soft plush bear made with hypoallergenic fabric. The perfect companion for a peaceful night's sleep.",
+    "pictureURL": "https://i.ibb.co.com/LhnJXZfb/meg-jenson-x4dk-U4w-Kevg-unsplash.jpg",
+    "subCategory": "Soft Toys"
+  },
+  {
+    "toyId": 5,
+    "toyName": "Sand Castle Beach Set",
+    "sellerName": "Outdoor Fun Co.",
+    "sellerEmail": "play@outdoorfun.com",
+    "price": 12.99,
+    "rating": 4.3,
+    "availableQuantity": 150,
+    "description": "Durable plastic bucket, shovel, and molds for building the perfect sand castle at the beach.",
+    "pictureURL": "https://i.ibb.co.com/RpG7LKqd/pexels-polesietoys-4491761.jpg",
+    "subCategory": "Outdoor"
+  },
+  {
+    "toyId": 6,
+    "toyName": "Interactive Dancing Robot",
+    "sellerName": "Future Tech Toys",
+    "sellerEmail": "bot@futuretech.com",
+    "price": 59.99,
+    "rating": 4.7,
+    "availableQuantity": 15,
+    "description": "Voice-controlled robot that dances, sings, and responds to touch commands.",
+    "pictureURL": "https://i.ibb.co.com/Fkb1y44x/pexels-wutthichai-charoenburi-553075115-19881880.jpg",
+    "subCategory": "Remote Control Cars"
+  },
+  {
+    "toyId": 7,
+    "toyName": "Musical Xylophone Set",
+    "sellerName": "Melody Makers",
+    "sellerEmail": "music@melodymakers.com",
+    "price": 26.0,
+    "rating": 4.4,
+    "availableQuantity": 40,
+    "description": "A vibrant xylophone that introduces toddlers to rhythm and melody with clear, bright sounds.",
+    "pictureURL": "https://i.ibb.co.com/PvzVwmWy/sandy-millar-S5p-Fh-Dx-UXyw-unsplash.jpg",
+    "subCategory": "Musical Instruments"
+  },
+  {
+    "toyId": 8,
+    "toyName": "Colorful Stacking Rings",
+    "sellerName": "BabyJoy Toys",
+    "sellerEmail": "contact@babyjoy.com",
+    "price": 15.99,
+    "rating": 4.9,
+    "availableQuantity": 100,
+    "description": "Classic stacking toy that helps infants develop hand-eye coordination and color recognition.",
+    "pictureURL": "https://i.ibb.co.com/JWkdc210/third.jpg",
+    "subCategory": "Soft Toys"
+  },
+  {
+    "toyId": 9,
+    "toyName": "Deluxe Art & Painting Station",
+    "sellerName": "Creative Kids BD",
+    "sellerEmail": "art@creativekids.com",
+    "price": 22.0,
+    "rating": 4.5,
+    "availableQuantity": 30,
+    "description": "Complete art set including markers, crayons, and sketchbooks for your little artist.",
+    "pictureURL": "https://i.ibb.co.com/4RWNWcK7/tomas-petz-O8eo2-BC1-SOI-unsplash.jpg",
+    "subCategory": "Art & Crafts"
+  },
+  {
+    "toyId": 10,
+    "toyName": "Vintage Model Airplane",
+    "sellerName": "Sky High Collectibles",
+    "sellerEmail": "fly@skyhigh.com",
+    "price": 32.0,
+    "rating": 4.6,
+    "availableQuantity": 20,
+    "description": "A beautifully crafted model airplane that doubles as a toy and a room decoration.",
+    "pictureURL": "https://i.ibb.co.com/b52MbqpH/jose-betancourt-NHIP7-M3-EB9w-unsplash.jpg",
+    "subCategory": "Action Figures"
+  }
+]

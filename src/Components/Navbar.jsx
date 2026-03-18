@@ -11,7 +11,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full bg-base-100 shadow-sm  h-[10vh]">
+    <div className="w-full shadow-sm  min-h-[10vh] flex items-center justify-center">
       <div className="navbar w-11/12 mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
