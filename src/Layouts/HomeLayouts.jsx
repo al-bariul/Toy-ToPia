@@ -4,6 +4,7 @@ import Slider from "../Components/Slider";
 import Category from "../Components/Category/Category";
 import PopularToys from "../Components/PopularToys/PopularToys";
 import Choose from "../Components/Choose";
+import Footer from "../Components/Footer";
 
 const HomeLayouts = () => {
   return (
@@ -24,6 +25,9 @@ const HomeLayouts = () => {
 
       {/* Choose */}
       <Choose></Choose>
+
+      {/* Footer */}
+      <Footer></Footer>
     </div>
   );
 };
