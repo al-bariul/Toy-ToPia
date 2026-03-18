@@ -7,9 +7,12 @@ import "./index.css";
  */
 import { RouterProvider } from "react-router/dom";
 import router from "./Routes/Routes";
+import AuthenticationProvider from "./Provider/AuthenticationProvider";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthenticationProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthenticationProvider>
   </StrictMode>,
 );

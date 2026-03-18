@@ -1,7 +1,23 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Register = () => {
+  const { createUser } = use(AuthenticationContext);
+  console.log(createUser);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
+    const photoURL = event.target.photo.value;
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    // console.log(name, photoURL, email, password);
+    createUser(email, password)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="bg-base-200 min-h-[calc(100vh-80px)] flex flex-col items-center justify-center">
       <div className="text-center lg:text-left">
@@ -25,7 +41,7 @@ const Register = () => {
                   </button>
                 </div>
               </div>
-              <form>
+              <form onSubmit={handleRegister}>
                 <fieldset className="fieldset">
                   <label className="label">Name</label>
                   <input
@@ -60,7 +76,7 @@ const Register = () => {
                   <div>
                     <a className="link link-hover">Forgot password?</a>
                   </div>
-                  <button className="btn btn-neutral mt-4">Login</button>
+                  <button className="btn btn-neutral mt-4">Register</button>
                 </fieldset>
               </form>
               {/* Already Have An Account */}
