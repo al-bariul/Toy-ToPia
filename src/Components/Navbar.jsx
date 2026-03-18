@@ -3,7 +3,12 @@ import { Link, NavLink } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Navbar = () => {
-  const { user } = use(AuthenticationContext);
+  const { user, signOutUser } = use(AuthenticationContext);
+  const handleSignOut = () => {
+    signOutUser()
+      .then(() => {})
+      .catch((error) => console.log(error));
+  };
 
   const links = (
     <>
@@ -65,7 +70,10 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <a className="btn bg-red-400 text-white hover:bg-white hover:text-red-400 border-2 border-red-400">
+            <a
+              onClick={handleSignOut}
+              className="btn bg-red-400 text-white hover:bg-white hover:text-red-400 border-2 border-red-400"
+            >
               Sign Out
             </a>
           ) : (

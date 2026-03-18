@@ -1,6 +1,7 @@
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
+  signOut,
 } from "firebase/auth";
 import React, { useState } from "react";
 import { auth } from "../Firebase/Firebase.init";
@@ -12,6 +13,10 @@ const AuthenticationProvider = ({ children }) => {
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const signOutUser = () => {
+    return signOut(auth);
   };
 
   useEffect(() => {
@@ -26,6 +31,7 @@ const AuthenticationProvider = ({ children }) => {
   const Information = {
     createUser: createUser,
     user: user,
+    signOutUser: signOutUser,
   };
   return (
     <AuthenticationContext value={Information}>
