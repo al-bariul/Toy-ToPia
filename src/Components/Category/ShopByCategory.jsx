@@ -14,12 +14,12 @@ const ShopByCategory = ({ shopCategory }) => {
   );
   //   console.log(uniqueCategories);
   return (
-    <div className="my-28">
+    <div className="my-28 w-11/12 mx-auto">
       <div className="header text-center">
         <h1 className="text-5xl font-bold">Shop by Category</h1>
         <p className="text-2xl mt-5">Find the perfect toy by category</p>
       </div>
-      <div className="w-11/12 mx-auto flex flex-wrap justify-center gap-10">
+      <div className="flex flex-wrap justify-center gap-10">
         {uniqueCategories.map((categories) => (
           <ShowCategory categories={categories}></ShowCategory>
         ))}

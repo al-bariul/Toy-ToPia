@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../Components/Navbar";
 import Slider from "../Components/Slider";
 import Category from "../Components/Category/Category";
+import PopularToys from "../Components/PopularToys/PopularToys";
 
 const HomeLayouts = () => {
   return (
@@ -16,6 +17,9 @@ const HomeLayouts = () => {
 
       {/* Shop By Category */}
       <Category></Category>
+
+      {/* Popular Toys */}
+      <PopularToys></PopularToys>
     </div>
   );
 };

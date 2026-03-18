@@ -1,0 +1,38 @@
+import React from "react";
+
+const ShowPopularToy = ({ popularToy }) => {
+  const { toyName, price, rating, availableQuantity, pictureURL } = popularToy;
+  //   console.log(popularToy);
+  return (
+    <div>
+      <div className="card bg-base-100 w-96 h-96 shadow-xl">
+        <figure className="h-52 w-full overflow-hidden shrink-0">
+          <img
+            className="w-full h-full object-cover object-center"
+            src={pictureURL}
+            alt=""
+          />
+        </figure>
+        <div className="card-body overflow-hidden shrink-0">
+          <h2 className="card-title">
+            {toyName}
+            <div className="badge text-yellow-400 font-bold text-[18px] border-0">
+              🏆 {rating}
+            </div>
+          </h2>
+          <div className="card-actions">
+            <div className="badge badge-outline">Price : {price}$</div>
+            <div className="badge badge-outline">
+              In Stock : {availableQuantity}
+            </div>
+          </div>
+        </div>
+        <div className="mb-2 btn bg-red-400 text-white rounded-xl w-48 mx-auto">
+          <button>View More</button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ShowPopularToy;

@@ -4,7 +4,7 @@ import ShopByCategory from "./ShopByCategory";
 const shopCategory = fetch("/public/toys.json").then((response) =>
   response.json(),
 );
-console.log(shopCategory);
+// console.log(shopCategory);
 
 const Category = () => {
   return (

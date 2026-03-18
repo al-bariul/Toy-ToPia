@@ -2,8 +2,6 @@ import React from "react";
 
 const ShowCategory = ({ categories }) => {
   const { subCategory, pictureURL } = categories;
-  console.log(subCategory);
-  //   console.log(subCategory.find((sc) => console.log(sc)));
   return (
     <div className="mt-10">
       <div className="card bg-base-100 w-96 h-80 shadow-xl">
