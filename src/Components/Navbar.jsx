@@ -1,13 +1,20 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Navbar = () => {
   const links = (
     <>
-      <li>
-        <a>Home</a>
-      </li>
+      <NavLink to={"/"}>Home</NavLink>
     </>
+  );
+
+  const loginBtn = (
+    <Link
+      to={"/auth/login"}
+      className="btn bg-red-400 text-white hover:bg-white hover:text-red-400 border-2 border-red-400"
+    >
+      Log In
+    </Link>
   );
 
   return (
@@ -53,11 +60,7 @@ const Navbar = () => {
           {/* Big Screen Lists */}
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn bg-red-400 text-white hover:bg-white hover:text-red-400 border-2 border-red-400">
-            Log In
-          </a>
-        </div>
+        <div className="navbar-end">{loginBtn}</div>
       </div>
     </div>
   );
