@@ -8,6 +8,8 @@ import HomeLayouts from "../Layouts/HomeLayouts";
 import Authentication from "../Layouts/AuthLayouts";
 import Login from "../Components/Login";
 import Register from "../Components/Register";
+import PrivateRoute from "../Components/PrivateRoute";
+import ToyDetails from "../Components/ToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -24,9 +26,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/auth/register",
-        element: <Register></Register>
-      }
+        element: <Register></Register>,
+      },
     ],
+  },
+  {
+    path: "/toy-details/:toyId",
+    element: (
+      <PrivateRoute>
+        <ToyDetails></ToyDetails>
+      </PrivateRoute>
+    ),
+    loader: () => fetch("/public/toys.json"),
   },
 ]);
 

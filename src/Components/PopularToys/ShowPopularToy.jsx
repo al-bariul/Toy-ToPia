@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router";
 
 const ShowPopularToy = ({ popularToy }) => {
-  const { toyName, price, rating, availableQuantity, pictureURL } = popularToy;
+  const { toyName, price, rating, availableQuantity, pictureURL, toyId } =
+    popularToy;
   //   console.log(popularToy);
   return (
     <div>
@@ -27,9 +29,12 @@ const ShowPopularToy = ({ popularToy }) => {
             </div>
           </div>
         </div>
-        <div className="mb-2 btn bg-red-400 text-white rounded-xl w-48 mx-auto">
-          <button>View More</button>
-        </div>
+        <Link
+          to={`/toy-details/${toyId}`}
+          className="mb-2 btn bg-red-400 text-white rounded-xl w-48 mx-auto"
+        >
+          View More
+        </Link>
       </div>
     </div>
   );

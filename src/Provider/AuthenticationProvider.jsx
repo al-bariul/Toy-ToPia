@@ -26,7 +26,7 @@ const AuthenticationProvider = ({ children }) => {
       setUser(currentUser);
     });
     return () => {
-      unsubscribe;
+      unsubscribe();
     };
   }, []);
 
