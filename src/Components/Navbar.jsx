@@ -1,7 +1,10 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Navbar = () => {
+  const { user } = use(AuthenticationContext);
+
   const links = (
     <>
       <NavLink to={"/"}>Home</NavLink>
@@ -60,7 +63,15 @@ const Navbar = () => {
           {/* Big Screen Lists */}
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">{loginBtn}</div>
+        <div className="navbar-end">
+          {user ? (
+            <a className="btn bg-red-400 text-white hover:bg-white hover:text-red-400 border-2 border-red-400">
+              Sign Out
+            </a>
+          ) : (
+            loginBtn
+          )}
+        </div>
       </div>
     </div>
   );
