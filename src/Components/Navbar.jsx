@@ -4,6 +4,7 @@ import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthenticationContext);
+  // console.log(user.photoURL);
   const handleSignOut = () => {
     signOutUser()
       .then(() => {})
@@ -69,6 +70,13 @@ const Navbar = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
+          <div>
+            <img
+              className={`${user?.photoURL ? "w-16 h-16 rounded-full mr-5 object-center object-cover" : ""}`}
+              src={user ? user.photoURL : ""}
+              alt=""
+            />
+          </div>
           {user ? (
             <a
               onClick={handleSignOut}

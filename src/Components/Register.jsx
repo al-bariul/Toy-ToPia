@@ -3,8 +3,8 @@ import { Link } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Register = () => {
-  const { createUser } = use(AuthenticationContext);
-  console.log(createUser);
+  const { createUser, addNamePhoto, setUser } = use(AuthenticationContext);
+  //   console.log(createUser);
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -14,7 +14,17 @@ const Register = () => {
     const password = event.target.password.value;
     // console.log(name, photoURL, email, password);
     createUser(email, password)
-      .then((result) => console.log(result))
+      .then((result) => {
+        // console.log(result);
+        const user = result.user;
+        console.log(user);
+        event.target.reset();
+        addNamePhoto({ displayName: name, photoURL: photoURL })
+          .then(() => {
+            setUser({ ...user, displayName: name, photoURL: photoURL });
+          })
+          .catch(() => {});
+      })
       .catch((error) => console.log(error));
   };
 

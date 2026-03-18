@@ -1,7 +1,21 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Login = () => {
+  const { userSignIn } = use(AuthenticationContext);
+
+  const handleLogIn = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    userSignIn(email, password)
+      .then((result) => {
+        console.log(result.user);
+        event.target.reset();
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="bg-base-200 min-h-[calc(100vh-80px)] flex flex-col items-center justify-center">
       <div className="text-center lg:text-left">
@@ -25,7 +39,7 @@ const Login = () => {
                   </button>
                 </div>
               </div>
-              <form>
+              <form onSubmit={handleLogIn}>
                 <fieldset className="fieldset">
                   <label className="label">Email</label>
                   <input
