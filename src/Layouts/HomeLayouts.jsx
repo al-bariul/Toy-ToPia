@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import Slider from "../Components/Slider";
 import Category from "../Components/Category/Category";
 import PopularToys from "../Components/PopularToys/PopularToys";
+import Choose from "../Components/Choose";
 
 const HomeLayouts = () => {
   return (
@@ -20,6 +21,9 @@ const HomeLayouts = () => {
 
       {/* Popular Toys */}
       <PopularToys></PopularToys>
+
+      {/* Choose */}
+      <Choose></Choose>
     </div>
   );
 };
