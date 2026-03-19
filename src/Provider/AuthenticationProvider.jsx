@@ -12,6 +12,7 @@ import { useEffect } from "react";
 
 const AuthenticationProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -24,6 +25,7 @@ const AuthenticationProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -45,6 +47,7 @@ const AuthenticationProvider = ({ children }) => {
     userSignIn: userSignIn,
     addNamePhoto: addNamePhoto,
     setUser: setUser,
+    loading: loading,
   };
   return (
     <AuthenticationContext value={Information}>
