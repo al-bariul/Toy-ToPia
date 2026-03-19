@@ -3,7 +3,9 @@ import { Link } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Register = () => {
-  const { createUser, addNamePhoto, setUser } = use(AuthenticationContext);
+  const { createUser, addNamePhoto, setUser, handleGoogle } = use(
+    AuthenticationContext,
+  );
   //   console.log(createUser);
 
   const handleRegister = (event) => {
@@ -28,26 +30,31 @@ const Register = () => {
       .catch((error) => console.log(error));
   };
 
+  const handleGoogleLogIn = () => {
+    handleGoogle()
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="bg-base-200 min-h-[calc(100vh-80px)] flex flex-col items-center justify-center">
       <div className="text-center lg:text-left">
         <h1 className="text-5xl font-bold">Register!</h1>
       </div>
       {/* Log In Form */}
-      <div className="hero">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero ">
+        <div className="hero-content flex-col lg:flex-row-reverse w-[500px]">
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               {/* Log IN With Google and Github */}
               <div className="login-with-google-github flex items-center justify-center">
                 <div className="google">
-                  <button className="btn border-red-400 bg-transparent hover:bg-red-400 text-sm text-red-400 hover:text-white">
+                  <button
+                    type="button"
+                    onClick={handleGoogleLogIn}
+                    className="btn border-red-400 bg-transparent hover:bg-red-400 text-sm text-red-400 hover:text-white"
+                  >
                     Log In With Google
-                  </button>
-                </div>
-                <div className="github ml-10">
-                  <button className="btn border-red-400 bg-transparent hover:bg-red-400 text-sm text-red-400 hover:text-white">
-                    Log In With Github
                   </button>
                 </div>
               </div>
