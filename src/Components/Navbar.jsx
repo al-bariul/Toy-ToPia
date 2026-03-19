@@ -73,7 +73,7 @@ const Navbar = () => {
           <div>
             <img
               className={`${user?.photoURL ? "w-16 h-16 rounded-full mr-5 object-center object-cover" : ""}`}
-              src={user ? user.photoURL : ""}
+              src={user ? user.photoURL : null}
               alt=""
             />
           </div>
