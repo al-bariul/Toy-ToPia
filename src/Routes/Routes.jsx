@@ -11,6 +11,7 @@ import Register from "../Components/Register";
 import PrivateRoute from "../Components/PrivateRoute";
 import ToyDetails from "../Components/ToyDetails";
 import Alltoys from "../Components/AllToys/Alltoys";
+import Error from "../Components/Error";
 
 const router = createBrowserRouter([
   {
@@ -51,11 +52,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/*",
-    element: (
-      <div className="h-[100vh] mx-auto flex items-center justify-center text-7xl text-red-600">
-        Error 404
-      </div>
-    ),
+   element:<Error></Error>
   },
 ]);
 
