@@ -74,7 +74,7 @@ const Register = () => {
       </div>
       {/* Log In Form */}
       <div className="hero ">
-        <div className="hero-content flex-col lg:flex-row-reverse w-[500px]">
+        <div className="hero-content flex-col lg:flex-row-reverse w-full max-w-md">
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               {/* Log IN With Google and Github */}

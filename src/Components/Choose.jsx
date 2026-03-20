@@ -10,8 +10,8 @@ const Choose = () => {
           What makes us the best place for kid's toys
         </p>
       </div>
-      <div className="cards flex justify-center gap-10 mt-10">
-        <div className="card bg-base-100 w-96 shadow-lg">
+      <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center gap-10 mt-10">
+        <div className="card bg-base-100 w-full shadow-lg">
           <figure className="px-10 pt-10">
             <Shield className="text-green-600 w-[50px] h-[50px]"></Shield>
           </figure>
@@ -20,7 +20,7 @@ const Choose = () => {
             <p>All toys meet safety standards</p>
           </div>
         </div>
-        <div className="card bg-base-100 w-96 shadow-lg">
+        <div className="card bg-base-100 w-full shadow-lg">
           <figure className="px-10 pt-10">
             <Car className="text-blue-600 w-[50px] h-[50px]" />
           </figure>
@@ -29,7 +29,7 @@ const Choose = () => {
             <p>Quick shipping from local sellers</p>
           </div>
         </div>
-        <div className="card bg-base-100 w-96 shadow-lg">
+        <div className="card bg-base-100 w-full shadow-lg">
           <figure className="px-10 pt-10">
             <Gift className="text-orange-600 w-[50px] h-[50px]" />
           </figure>
@@ -38,7 +38,7 @@ const Choose = () => {
             <p>Free gift wrapping available</p>
           </div>
         </div>
-        <div className="card bg-base-100 w-96 shadow-lg">
+        <div className="card bg-base-100 w-full shadow-lg">
           <figure className="px-10 pt-10">
             <Star className="text-yellow-600 w-[50px] h-[50px]" />
           </figure>
