@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
+
 const Register = () => {
   const { createUser, addNamePhoto, setUser, handleGoogle } = use(
     AuthenticationContext,
@@ -155,6 +156,9 @@ const Register = () => {
           </div>
         </div>
       </div>
+
+      {/* Tostify */}
+      <ToastContainer />
     </div>
   );
 };

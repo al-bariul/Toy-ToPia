@@ -1,5 +1,6 @@
 import React, { use } from "react";
 import ShowPopularToy from "./ShowPopularToy";
+import { Link } from "react-router";
 
 const PopularToy = ({ showPopularToys }) => {
   const showPopularToy = use(showPopularToys);
@@ -19,9 +20,12 @@ const PopularToy = ({ showPopularToys }) => {
         ))}
       </div>
       <div className="show-all text-center">
-        <button className="btn mt-20 text-2xl px-10 py-6 text-white bg-red-500 rounded-xl">
+        <Link
+          to={"/alltoys"}
+          className="btn mt-20 text-2xl px-10 py-6 text-white bg-red-500 rounded-xl"
+        >
           Show All
-        </button>
+        </Link>
       </div>
     </div>
   );

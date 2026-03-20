@@ -10,6 +10,7 @@ import Login from "../Components/Login";
 import Register from "../Components/Register";
 import PrivateRoute from "../Components/PrivateRoute";
 import ToyDetails from "../Components/ToyDetails";
+import Alltoys from "../Components/AllToys/Alltoys";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,23 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
     loader: () => fetch("/public/toys.json"),
+  },
+  {
+    path: "/alltoys",
+    element: (
+      <PrivateRoute>
+        <Alltoys></Alltoys>
+      </PrivateRoute>
+    ),
+    loader: () => fetch("/public/toys.json"),
+  },
+  {
+    path: "/*",
+    element: (
+      <div className="h-[100vh] mx-auto flex items-center justify-center text-7xl text-red-600">
+        Error 404
+      </div>
+    ),
   },
 ]);
 
