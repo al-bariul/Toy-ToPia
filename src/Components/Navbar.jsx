@@ -13,7 +13,18 @@ const Navbar = () => {
 
   const links = (
     <>
-      <NavLink to={"/"}>Home</NavLink>
+      <li>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            isActive
+              ? "text-red-400 font-bold underline text-xl bg-transparent"
+              : "text-black text-xl font-bold hover:text-white hover:bg-red-400 bg-transparent"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
     </>
   );
 
@@ -75,7 +86,7 @@ const Navbar = () => {
               <img
                 className={`${user?.photoURL ? "w-16 h-16 rounded-full mr-5 object-center object-cover" : ""}`}
                 src={user ? user.photoURL : null}
-                alt="profile"
+                alt=""
                 title={user?.displayName || "User Name"}
               />
             </Link>
