@@ -1,9 +1,11 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Login = () => {
   const { userSignIn } = use(AuthenticationContext);
+  const navigate = useNavigate();
+  //   const [profile, setProfile] = useState([]);
 
   const handleLogIn = (event) => {
     event.preventDefault();
@@ -11,8 +13,10 @@ const Login = () => {
     const password = event.target.password.value;
     userSignIn(email, password)
       .then((result) => {
-        console.log(result.user);
+        // setProfile(result.user);
+        console.log(result);
         event.target.reset();
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };

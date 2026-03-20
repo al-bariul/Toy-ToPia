@@ -71,11 +71,14 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div>
-            <img
-              className={`${user?.photoURL ? "w-16 h-16 rounded-full mr-5 object-center object-cover" : ""}`}
-              src={user ? user.photoURL : null}
-              alt=""
-            />
+            <Link to="/profile">
+              <img
+                className={`${user?.photoURL ? "w-16 h-16 rounded-full mr-5 object-center object-cover" : ""}`}
+                src={user ? user.photoURL : null}
+                alt="profile"
+                title={user?.displayName || "User Name"}
+              />
+            </Link>
           </div>
           {user ? (
             <a

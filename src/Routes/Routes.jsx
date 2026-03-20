@@ -12,6 +12,7 @@ import PrivateRoute from "../Components/PrivateRoute";
 import ToyDetails from "../Components/ToyDetails";
 import Alltoys from "../Components/AllToys/Alltoys";
 import Error from "../Components/Error";
+import Profile from "../Components/Profile";
 
 const router = createBrowserRouter([
   {
@@ -51,8 +52,16 @@ const router = createBrowserRouter([
     loader: () => fetch("/public/toys.json"),
   },
   {
+    path: "/profile",
+    element: (
+      <PrivateRoute>
+        <Profile></Profile>
+      </PrivateRoute>
+    ),
+  },
+  {
     path: "/*",
-   element:<Error></Error>
+    element: <Error></Error>,
   },
 ]);
 

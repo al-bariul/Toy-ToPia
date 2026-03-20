@@ -1,8 +1,7 @@
 import React, { use, useState } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
 
 const Register = () => {
   const { createUser, addNamePhoto, setUser, handleGoogle } = use(
@@ -11,6 +10,7 @@ const Register = () => {
   //   console.log(createUser);
   const [error, setError] = useState(false);
   const [showpassword, setShowpassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -18,7 +18,6 @@ const Register = () => {
     const photoURL = event.target.photo.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
-    // console.log(name, photoURL, email, password);
 
     // Password Validation
     const length6Pattern = /.{6,}/;
@@ -41,13 +40,13 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        // console.log(result);
         const user = result.user;
-        console.log(user);
         event.target.reset();
+
         addNamePhoto({ displayName: name, photoURL: photoURL })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photoURL });
+            navigate("/");
           })
           .catch(() => {});
       })
@@ -56,7 +55,10 @@ const Register = () => {
 
   const handleGoogleLogIn = () => {
     handleGoogle()
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        navigate("/");
+      })
       .catch((error) => console.log(error));
   };
 
@@ -156,9 +158,6 @@ const Register = () => {
           </div>
         </div>
       </div>
-
-      {/* Tostify */}
-      <ToastContainer />
     </div>
   );
 };
