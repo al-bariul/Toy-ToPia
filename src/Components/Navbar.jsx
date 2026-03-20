@@ -1,4 +1,5 @@
 import React, { use } from "react";
+import logo from "../assets/logo.png";
 import { Link, NavLink } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
@@ -50,13 +51,12 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                {" "}
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="2"
                   d="M4 6h16M4 12h8m-8 6h16"
-                />{" "}
+                />
               </svg>
             </div>
 
@@ -71,7 +71,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to={"/"}>
-            <img className="w-16" src="/src/assets/logo.png" alt="" />
+            <img className="w-16" src={logo} alt="" />
           </Link>
         </div>
 

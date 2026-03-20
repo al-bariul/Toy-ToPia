@@ -37,11 +37,6 @@ const Login = () => {
                     Log In With Google
                   </button>
                 </div>
-                <div className="github ml-10">
-                  <button className="btn border-red-400 bg-transparent hover:bg-red-400 text-sm text-red-400 hover:text-white">
-                    Log In With Github
-                  </button>
-                </div>
               </div>
               <form onSubmit={handleLogIn}>
                 <fieldset className="fieldset">

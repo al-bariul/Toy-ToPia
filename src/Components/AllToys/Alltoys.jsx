@@ -6,7 +6,7 @@ import Footer from "../Footer";
 
 const Alltoys = () => {
   const data = useLoaderData();
-  console.log(data);
+//   console.log(data);
 
   return (
     <div>

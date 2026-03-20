@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import ShopByCategory from "./ShopByCategory";
 
-const shopCategory = fetch("/public/toys.json").then((response) =>
+const shopCategory = fetch("/toys.json").then((response) =>
   response.json(),
 );
 // console.log(shopCategory);

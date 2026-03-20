@@ -11,7 +11,7 @@ const ShowToys = ({ toys }) => {
     sellerName,
     sellerEmail,
   } = toys;
-  console.log(toys);
+//   console.log(toys);
   return (
     <div>
       <div className="card bg-base-100 w-96 h-[60vh] shadow-sm">

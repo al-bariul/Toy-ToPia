@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import PopularToy from "./PopularToy";
 
-const showPopularToys = fetch("/public/toys.json").then((response) =>
+const showPopularToys = fetch("/toys.json").then((response) =>
   response.json(),
 );
 

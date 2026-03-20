@@ -40,7 +40,8 @@ const router = createBrowserRouter([
         <ToyDetails></ToyDetails>
       </PrivateRoute>
     ),
-    loader: () => fetch("/public/toys.json"),
+    loader: () => fetch("/toys.json"),
+    errorElement: <Error></Error>,
   },
   {
     path: "/alltoys",
@@ -49,7 +50,8 @@ const router = createBrowserRouter([
         <Alltoys></Alltoys>
       </PrivateRoute>
     ),
-    loader: () => fetch("/public/toys.json"),
+    loader: () => fetch("/toys.json"),
+    errorElement: <Error></Error>,
   },
   {
     path: "/profile",

@@ -25,7 +25,6 @@ const Register = () => {
     const specialPattern = /^(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
 
     if (!length6Pattern.test(password)) {
-      console.log("password didn't match");
       setError("Password must be 6 character or longer.");
       return;
     } else if (!casePattern.test(password)) {

@@ -55,8 +55,7 @@ const Footer = () => {
       </div>
       <div className="text-center mt-10 border-t-1 border-[rgba(0,0,0,0.2)]">
         <p className="mt-6">
-          Copyright © {new Date().getFullYear()} - All right reserved by ACME
-          Industries Ltd
+          Copyright © {new Date().getFullYear()} - All right reserved Toy-ToPia.
         </p>
       </div>
     </footer>
