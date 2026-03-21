@@ -1,10 +1,11 @@
 import React, { use } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 
 const Login = () => {
-  const { userSignIn } = use(AuthenticationContext);
+  const { userSignIn, handleGoogle } = use(AuthenticationContext);
   const navigate = useNavigate();
+  const location = useLocation();
   // const [profile, setProfile] = useState([]);
 
   const handleLogIn = (event) => {
@@ -16,7 +17,18 @@ const Login = () => {
         // setProfile(result.user);
         console.log(result);
         event.target.reset();
-        navigate("/");
+
+        navigate(location.state || "/");
+      })
+      .catch((error) => console.log(error));
+  };
+
+  const handleGoogleLogIn = () => {
+    handleGoogle()
+      .then((result) => {
+        console.log(result);
+
+        navigate(location.state || "/");
       })
       .catch((error) => console.log(error));
   };
@@ -27,13 +39,16 @@ const Login = () => {
       </div>
       {/* Log In Form */}
       <div className="hero">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+        <div className="hero-content w-96 flex-col lg:flex-row-reverse">
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
               {/* Log IN With Google and Github */}
               <div className="login-with-google-github flex items-center justify-center">
                 <div className="google">
-                  <button className="btn border-red-400 bg-transparent hover:bg-red-400 text-sm text-red-400 hover:text-white">
+                  <button
+                    onClick={handleGoogleLogIn}
+                    className="btn border-red-400 bg-transparent hover:bg-red-400 text-sm text-red-400 hover:text-white"
+                  >
                     Log In With Google
                   </button>
                 </div>
@@ -66,6 +81,7 @@ const Login = () => {
                 <Link
                   className="text-blue-500 hover:text-blue-900"
                   to="/auth/register"
+                  state={location.state}
                 >
                   Register
                 </Link>

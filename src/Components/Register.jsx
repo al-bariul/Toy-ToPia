@@ -1,5 +1,5 @@
 import React, { use, useState } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { AuthenticationContext } from "../Provider/AuthenticationContext";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -11,6 +11,7 @@ const Register = () => {
   const [error, setError] = useState(false);
   const [showpassword, setShowpassword] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleRegister = (event) => {
     event.preventDefault();
@@ -18,6 +19,7 @@ const Register = () => {
     const photoURL = event.target.photo.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
+    setError("");
 
     // Password Validation
     const length6Pattern = /.{6,}/;
@@ -45,18 +47,23 @@ const Register = () => {
         addNamePhoto({ displayName: name, photoURL: photoURL })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photoURL });
-            navigate("/");
+
+            navigate(location.state || "/");
           })
           .catch(() => {});
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   };
 
   const handleGoogleLogIn = () => {
     handleGoogle()
       .then((result) => {
         console.log(result);
-        navigate("/");
+
+        navigate(location.state || "/");
       })
       .catch((error) => console.log(error));
   };

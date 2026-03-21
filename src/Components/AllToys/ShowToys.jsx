@@ -11,7 +11,7 @@ const ShowToys = ({ toys }) => {
     sellerName,
     sellerEmail,
   } = toys;
-//   console.log(toys);
+  //   console.log(toys);
   return (
     <div>
       <div className="card bg-base-100 w-96 h-[60vh] shadow-sm">
@@ -31,8 +31,10 @@ const ShowToys = ({ toys }) => {
           <div className="card-actions">
             <div className="badge badge-outline">{subCategory}</div>
             <div className="badge badge-outline">{price} $</div>
-            <div className="sellerName">Seller Name : {sellerName}</div>
-            <div className="sellerEmail">Seller Email : {sellerEmail}</div>
+            <div className="mt-6">
+              <div className="sellerName">Seller Name : {sellerName}</div>
+              <div className="sellerEmail">Seller Email : {sellerEmail}</div>
+            </div>
           </div>
         </div>
       </div>
