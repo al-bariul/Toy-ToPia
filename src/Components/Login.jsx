@@ -17,7 +17,6 @@ const Login = () => {
         // setProfile(result.user);
         console.log(result);
         event.target.reset();
-
         navigate(location.state || "/");
       })
       .catch((error) => console.log(error));
@@ -27,7 +26,6 @@ const Login = () => {
     handleGoogle()
       .then((result) => {
         console.log(result);
-
         navigate(location.state || "/");
       })
       .catch((error) => console.log(error));

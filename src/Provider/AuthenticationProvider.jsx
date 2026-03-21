@@ -18,7 +18,13 @@ const AuthenticationProvider = ({ children }) => {
   const googleProvider = new GoogleAuthProvider();
 
   const createUser = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password).catch(
+      (error) => {
+        setLoading(false);
+        throw error;
+      },
+    );
   };
 
   const signOutUser = () => {
@@ -36,7 +42,11 @@ const AuthenticationProvider = ({ children }) => {
   }, []);
 
   const userSignIn = (email, password) => {
-    return signInWithEmailAndPassword(auth, email, password);
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password).catch((error) => {
+      setLoading(false);
+      throw error;
+    });
   };
 
   const addNamePhoto = (updateUser) => {
@@ -44,7 +54,11 @@ const AuthenticationProvider = ({ children }) => {
   };
 
   const handleGoogle = () => {
-    return signInWithPopup(auth, googleProvider);
+    setLoading(true);
+    return signInWithPopup(auth, googleProvider).catch((error) => {
+      setLoading(false);
+      throw error;
+    });
   };
 
   const Information = {

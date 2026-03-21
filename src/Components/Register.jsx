@@ -47,7 +47,6 @@ const Register = () => {
         addNamePhoto({ displayName: name, photoURL: photoURL })
           .then(() => {
             setUser({ ...user, displayName: name, photoURL: photoURL });
-
             navigate(location.state || "/");
           })
           .catch(() => {});
@@ -62,7 +61,6 @@ const Register = () => {
     handleGoogle()
       .then((result) => {
         console.log(result);
-
         navigate(location.state || "/");
       })
       .catch((error) => console.log(error));
@@ -156,6 +154,7 @@ const Register = () => {
                 <Link
                   className="text-blue-500 hover:text-blue-900"
                   to="/auth/login"
+                  state={location.state}
                 >
                   login
                 </Link>
