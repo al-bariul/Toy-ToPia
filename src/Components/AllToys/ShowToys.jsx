@@ -14,7 +14,7 @@ const ShowToys = ({ toys }) => {
   //   console.log(toys);
   return (
     <div>
-      <div className="card bg-base-100 w-96 h-[60vh] shadow-sm">
+      <div className="card bg-base-100 w-96 h-auto shadow-sm">
         <figure className="h-60 w-full overflow-hidden shrink-0">
           <img
             className="w-full h-full object-cover object-center"

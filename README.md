@@ -8,8 +8,7 @@ To build an online marketplace for kids toy. Toy-Topia encourages families to di
 
 ## 🌐 Project Links
 
-- **Live Deployment URL:** `[ 👉 Insert Your Netlify/Firebase Live Link Here ]`
-- **GitHub Client Repository:** `[ 👉 Insert Your GitHub Repo Link Here ]`
+- **Lives : https://toy-topia-3f784.web.app/**
 
 ## ✨ Features
 
