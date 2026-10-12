@@ -13,11 +13,21 @@ import ToyDetails from "../Components/ToyDetails";
 import Alltoys from "../Components/AllToys/Alltoys";
 import Error from "../Components/Error";
 import Profile from "../Components/Profile";
+import Blog from "../Components/Blog";
+import About from "../Components/About";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayouts></HomeLayouts>,
+  },
+  {
+    path: "/blog",
+    element: <Blog></Blog>,
+  },
+  {
+    path: "/about",
+    element: <About></About>,
   },
   {
     path: "/auth",
