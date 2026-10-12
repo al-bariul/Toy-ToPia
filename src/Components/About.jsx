@@ -199,7 +199,7 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#1E293B] flex flex-col font-sans">
+    <div className="min-h-screen tt-page-bg tt-text-primary flex flex-col font-sans">
       {/* Sticky Navigation */}
       <nav className="sticky top-0 z-50 bg-[#232D47]">
         <Navbar />
@@ -247,13 +247,13 @@ const About = () => {
 
       {/* Impact Numbers Section */}
       <section className="relative -mt-10 z-20 w-11/12 max-w-7xl mx-auto">
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-200/80 p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="tt-surface rounded-3xl shadow-xl border p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {IMPACT_METRICS.map((metric, idx) => {
             const Icon = metric.icon;
             return (
               <div
                 key={idx}
-                className="flex flex-col items-start border-b sm:border-b-0 sm:border-r border-slate-100 last:border-none pb-6 sm:pb-0 pr-4"
+                className="flex flex-col items-start border-b sm:border-b-0 sm:border-r tt-border-color last:border-none pb-6 sm:pb-0 pr-4"
               >
                 <div className="w-12 h-12 rounded-2xl bg-[#FFF5F2] text-[#FF7052] flex items-center justify-center mb-3">
                   <Icon className="w-6 h-6" />
@@ -261,10 +261,10 @@ const About = () => {
                 <span className="text-3xl md:text-4xl font-black text-[#232D47]">
                   {metric.number}
                 </span>
-                <span className="text-sm font-bold text-slate-800 mt-1">
+                <span className="text-sm font-bold tt-text-primary mt-1">
                   {metric.label}
                 </span>
-                <p className="text-xs text-slate-500 mt-1.5 leading-relaxed">
+                <p className="text-xs tt-text-muted mt-1.5 leading-relaxed">
                   {metric.description}
                 </p>
               </div>
@@ -303,29 +303,29 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-black text-[#232D47] mt-3 leading-tight">
               Why We Rebelled Against Disposable Plastic & Blinking Screens
             </h2>
-            <p className="mt-5 text-slate-600 text-base md:text-lg leading-relaxed">
+            <p className="mt-5 tt-text-secondary text-base md:text-lg leading-relaxed">
               Walk into any conventional toy megastore today, and you are greeted by an assault of synthetic neon plastics, deafening robotic noises, and gadgets with zero creative input required from the child.
             </p>
-            <p className="mt-4 text-slate-600 text-sm md:text-base leading-relaxed">
+            <p className="mt-4 tt-text-secondary text-sm md:text-base leading-relaxed">
               When children merely watch a toy perform, their imagination stays passive. But when you place solid beechwood blocks, balanced mechanical gears, or a microscope into their hands, they become active scientists and storytellers.
             </p>
 
             <div className="mt-8 space-y-3">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                <p className="text-sm text-slate-700">
+                <p className="text-sm tt-text-secondary">
                   <strong>Tactile Sensory Feedback:</strong> Real wood, cotton, and organic materials provide authentic weight and temperature cues that stimulate cognitive development.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                <p className="text-sm text-slate-700">
+                <p className="text-sm tt-text-secondary">
                   <strong>Heirloom Durability:</strong> Resisting the throwaway culture by creating toys designed to withstand decades of joyful play.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
-                <p className="text-sm text-slate-700">
+                <p className="text-sm tt-text-secondary">
                   <strong>Equitable Local Partnerships:</strong> Uplifting regional craftspeople who take pride in ethical, humane production.
                 </p>
               </div>
@@ -335,16 +335,16 @@ const About = () => {
       </section>
 
       {/* Core Pillars Section */}
-      <section className="bg-slate-100/70 py-20 border-y border-slate-200">
+      <section className="tt-surface-2 py-20 border-y tt-border-color">
         <div className="w-11/12 max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="px-3.5 py-1.5 rounded-full bg-white text-[#FF7052] text-xs font-bold uppercase tracking-wider border border-slate-200 shadow-xs">
+            <span className="px-3.5 py-1.5 rounded-full tt-surface text-[#FF7052] text-xs font-bold uppercase tracking-wider border shadow-xs">
               What Defines Us
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-[#232D47] mt-3">
               Our Four Uncompromising Pillars
             </h2>
-            <p className="text-slate-600 text-sm md:text-base mt-3">
+            <p className="tt-text-secondary text-sm md:text-base mt-3">
               Every item featured on Toy-ToPia must pass each of these rigorous standards before ever being offered to families.
             </p>
           </div>
@@ -355,7 +355,7 @@ const About = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-8 border border-slate-200/90 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                  className="tt-surface rounded-3xl p-8 border shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
                 >
                   <div>
                     <div
@@ -366,11 +366,11 @@ const About = () => {
                     <h3 className="text-xl font-bold text-[#232D47] leading-snug">
                       {pillar.title}
                     </h3>
-                    <p className="mt-3 text-sm text-slate-600 leading-relaxed">
+                    <p className="mt-3 text-sm tt-text-secondary leading-relaxed">
                       {pillar.description}
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center gap-1.5 text-xs font-bold text-[#FF7052]">
+                  <div className="mt-6 pt-4 border-t tt-border-color flex items-center gap-1.5 text-xs font-bold text-[#FF7052]">
                     <span>Verified Standard</span>
                     <BadgeCheck className="w-3.5 h-3.5" />
                   </div>
@@ -399,15 +399,15 @@ const About = () => {
           {SAFETY_PROCESS.map((step, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl p-7 border border-slate-200 shadow-sm relative overflow-hidden"
+              className="tt-surface rounded-3xl p-7 border shadow-sm relative overflow-hidden"
             >
-              <div className="text-4xl font-black text-slate-200 mb-2">
+              <div className="text-4xl font-black tt-step-number mb-2">
                 {step.step}
               </div>
               <h4 className="text-lg font-bold text-[#232D47] mb-2 leading-tight">
                 {step.title}
               </h4>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <p className="text-xs sm:text-sm tt-text-secondary leading-relaxed">
                 {step.details}
               </p>
             </div>
@@ -466,7 +466,7 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-black text-[#232D47] mt-3">
             The Educators, Engineers & Parents Behind Toy-ToPia
           </h2>
-          <p className="text-slate-600 text-sm md:text-base mt-3">
+          <p className="tt-text-secondary text-sm md:text-base mt-3">
             A dedicated team passionate about childhood safety, ethical commerce, and early development.
           </p>
         </div>
@@ -475,7 +475,7 @@ const About = () => {
           {TEAM_MEMBERS.map((member, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-3xl p-6 border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
+              className="tt-surface rounded-3xl p-6 border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center"
             >
               <div className="w-28 h-28 rounded-full overflow-hidden mb-5 ring-4 ring-[#FF7052]/20">
                 <img
@@ -490,7 +490,7 @@ const About = () => {
               <p className="text-xs font-semibold text-[#FF7052] mt-0.5 mb-3">
                 {member.role}
               </p>
-              <p className="text-xs text-slate-600 leading-relaxed">
+              <p className="text-xs tt-text-secondary leading-relaxed">
                 {member.bio}
               </p>
             </div>
@@ -499,7 +499,7 @@ const About = () => {
       </section>
 
       {/* Customer / Community Testimonial Highlight */}
-      <section className="bg-gradient-to-r from-amber-50 to-orange-50 py-16 border-y border-amber-200/60">
+      <section className="tt-surface-3 py-16 border-y tt-border-color">
         <div className="w-11/12 max-w-4xl mx-auto text-center">
           <Quote className="w-12 h-12 text-[#FF7052] mx-auto mb-4 opacity-50" />
           <p className="text-xl md:text-2xl font-bold text-[#232D47] leading-relaxed italic">
@@ -507,7 +507,7 @@ const About = () => {
           </p>
           <div className="mt-6">
             <h5 className="font-bold text-[#232D47]">Farzana Yasmin</h5>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs tt-text-muted">
               Preschool Director & Verified Mother of Two • Dhaka, Bangladesh
             </p>
           </div>
@@ -523,7 +523,7 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-black text-[#232D47] mt-3">
             Frequently Asked Questions
           </h2>
-          <p className="text-slate-600 text-sm mt-2">
+          <p className="tt-text-secondary text-sm mt-2">
             Everything you need to know about our standards, artisans, and toys.
           </p>
         </div>
@@ -534,7 +534,7 @@ const About = () => {
             return (
               <div
                 key={index}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs transition"
+                className="tt-surface rounded-2xl border overflow-hidden shadow-xs transition"
               >
                 <button
                   onClick={() => toggleFaq(index)}
@@ -548,7 +548,7 @@ const About = () => {
                   />
                 </button>
                 {isOpen && (
-                  <div className="px-6 pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4">
+                  <div className="px-6 pb-6 text-sm tt-text-secondary leading-relaxed border-t tt-border-color pt-4">
                     {faq.answer}
                   </div>
                 )}
@@ -564,7 +564,7 @@ const About = () => {
           <h3 className="text-3xl md:text-4xl font-black tracking-tight">
             Ready to Bring Natural, Screen-Free Joy Into Your Home?
           </h3>
-          <p className="text-slate-300 text-sm md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#94A3B8] text-sm md:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
             Discover our curated catalog of non-toxic, educator-approved toys, or dive into our parenting journal for free play ideas.
           </p>
 

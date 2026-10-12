@@ -17,6 +17,8 @@ import {
   Sparkles,
   ShoppingBag,
   ShieldCheck,
+  Sun,
+  Moon,
 } from "lucide-react";
 
 /**
@@ -34,6 +36,18 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const [isExploreDropdownOpen, setIsExploreDropdownOpen] = useState(false);
+
+  // Dark mode state — reads initial theme set by index.html script
+  const [isDark, setIsDark] = useState(() => {
+    return document.documentElement.getAttribute("data-theme") === "dark";
+  });
+
+  const toggleTheme = () => {
+    const next = isDark ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("tt-theme", next);
+    setIsDark(!isDark);
+  };
 
   const profileRef = useRef(null);
   const exploreRef = useRef(null);
@@ -247,8 +261,22 @@ const Navbar = () => {
             )}
           </nav>
 
-          {/* Desktop Right Side (Auth controls & Advanced Profile Dropdown) */}
+          {/* Desktop Right Side (Dark Mode Toggle + Auth controls) */}
           <div className="hidden lg:flex items-center gap-3">
+            {/* Dark Mode Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className="tt-theme-toggle"
+              aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+              title={isDark ? "Light Mode" : "Dark Mode"}
+            >
+              {isDark ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </button>
             {user ? (
               /* LOGGED IN: Profile Menu Dropdown + Logout Action */
               <div className="flex items-center gap-3">
@@ -544,6 +572,20 @@ const Navbar = () => {
               </>
             )}
           </div>
+
+          {/* Mobile Dark Mode Toggle */}
+          <button
+            type="button"
+            onClick={toggleTheme}
+            className="w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-[#C3C8D2] hover:text-[#FFFFFF] hover:bg-[#2B3654] transition font-semibold text-base"
+          >
+            {isDark ? (
+              <Sun className="w-5 h-5 text-[#FF7052]" />
+            ) : (
+              <Moon className="w-5 h-5 text-[#FF7052]" />
+            )}
+            <span>{isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}</span>
+          </button>
 
           {/* Mobile Auth Button */}
           <div className="pt-3 border-t border-[#2E3B5C] flex flex-col gap-2">

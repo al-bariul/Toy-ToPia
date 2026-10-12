@@ -64,6 +64,16 @@ const router = createBrowserRouter([
     errorElement: <Error></Error>,
   },
   {
+    path: "/explore",
+    element: (
+      <PrivateRoute>
+        <Alltoys></Alltoys>
+      </PrivateRoute>
+    ),
+    loader: () => fetch("/toys.json"),
+    errorElement: <Error></Error>,
+  },
+  {
     path: "/profile",
     element: (
       <PrivateRoute>

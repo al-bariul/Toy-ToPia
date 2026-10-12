@@ -21,7 +21,7 @@ const Profile = () => {
 
   return (
     <>
-      <nav className="sticky top-0 z-50 bg-white">
+      <nav className="sticky top-0 z-50">
         <Navbar></Navbar>
       </nav>
 

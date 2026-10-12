@@ -305,7 +305,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-[#1E293B] flex flex-col font-sans">
+    <div className="min-h-screen tt-page-bg tt-text-primary flex flex-col font-sans">
       {/* Sticky Navigation */}
       <nav className="sticky top-0 z-50 bg-[#232D47]">
         <Navbar />
@@ -374,7 +374,7 @@ const Blog = () => {
                   className={`px-4 py-2.5 rounded-xl text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                     isActive
                       ? "bg-[#FF7052] text-white shadow-md shadow-[#FF7052]/20"
-                      : "bg-white text-[#475569] border border-slate-200 hover:border-[#FF7052] hover:text-[#232D47]"
+                      : "tt-pill-inactive"
                   }`}
                 >
                   <span>{cat}</span>
@@ -396,7 +396,7 @@ const Blog = () => {
         {/* Highlight Featured Article (Shown when no specific filter query or All Articles) */}
         {selectedCategory === "All Articles" && !searchQuery && (
           <section className="mb-16">
-            <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-2xl transition-all duration-300">
+            <div className="tt-surface rounded-3xl border shadow-xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-2xl transition-all duration-300">
               <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden group">
                 <img
                   src={BLOG_ARTICLES[0].image}
@@ -429,14 +429,14 @@ const Blog = () => {
                     {BLOG_ARTICLES[0].title}
                   </h2>
 
-                  <p className="mt-4 text-slate-600 text-sm md:text-base leading-relaxed">
+                  <p className="mt-4 tt-text-secondary text-sm md:text-base leading-relaxed">
                     {BLOG_ARTICLES[0].summary}
                   </p>
 
                   {/* Highlights list */}
                   <div className="mt-5 space-y-2">
                     {BLOG_ARTICLES[0].keyTakeaways.slice(0, 2).map((pt, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-xs md:text-sm text-slate-600">
+                      <div key={idx} className="flex items-start gap-2 text-xs md:text-sm tt-text-secondary">
                         <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
                         <span>{pt}</span>
                       </div>
@@ -444,7 +444,7 @@ const Blog = () => {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between">
+                <div className="pt-6 mt-6 border-t tt-border-color flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <img
                       src={BLOG_ARTICLES[0].author.avatar}
@@ -452,10 +452,10 @@ const Blog = () => {
                       className="w-10 h-10 rounded-full object-cover ring-2 ring-[#FF7052]/30"
                     />
                     <div>
-                      <p className="text-xs font-bold text-[#232D47]">
+                      <p className="text-xs font-bold tt-text-primary">
                         {BLOG_ARTICLES[0].author.name}
                       </p>
-                      <p className="text-[11px] text-slate-500">
+                      <p className="text-[11px] tt-text-muted">
                         {BLOG_ARTICLES[0].author.role}
                       </p>
                     </div>
@@ -517,7 +517,7 @@ const Blog = () => {
                 <article
                   key={article.id}
                   onClick={() => setActiveArticle(article)}
-                  className="bg-white rounded-3xl border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer"
+                  className="tt-surface rounded-3xl border shadow-md hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group cursor-pointer"
                 >
                   {/* Article Thumbnail */}
                   <div className="relative h-52 overflow-hidden bg-slate-100">
@@ -561,12 +561,12 @@ const Blog = () => {
                       </div>
 
                       {/* Title */}
-                      <h4 className="text-lg font-bold text-[#232D47] group-hover:text-[#FF7052] transition-colors leading-snug line-clamp-2">
+                      <h4 className="text-lg font-bold tt-text-primary group-hover:text-[#FF7052] transition-colors leading-snug line-clamp-2">
                         {article.title}
                       </h4>
 
                       {/* Excerpt */}
-                      <p className="mt-3 text-sm text-slate-600 line-clamp-3 leading-relaxed">
+                      <p className="mt-3 text-sm tt-text-secondary line-clamp-3 leading-relaxed">
                         {article.summary}
                       </p>
 
@@ -584,7 +584,7 @@ const Blog = () => {
                     </div>
 
                     {/* Author & Read Link */}
-                    <div className="pt-5 mt-5 border-t border-slate-100 flex items-center justify-between">
+                    <div className="pt-5 mt-5 border-t tt-border-color flex items-center justify-between">
                       <div className="flex items-center gap-2.5">
                         <img
                           src={article.author.avatar}
@@ -592,10 +592,10 @@ const Blog = () => {
                           className="w-8 h-8 rounded-full object-cover ring-1 ring-slate-200"
                         />
                         <div className="truncate max-w-[130px]">
-                          <p className="text-xs font-bold text-[#232D47] truncate">
+                          <p className="text-xs font-bold tt-text-primary truncate">
                             {article.author.name}
                           </p>
-                          <p className="text-[10px] text-slate-400 truncate">
+                          <p className="text-[10px] tt-text-muted truncate">
                             {article.author.role}
                           </p>
                         </div>
@@ -675,10 +675,10 @@ const Blog = () => {
       {/* Full Article Reader Modal */}
       {activeArticle && (
         <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
-          <div className="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 relative animate-in fade-in zoom-in-95 duration-200">
+          <div className="tt-modal-bg rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border tt-border-color relative animate-in fade-in zoom-in-95 duration-200">
             {/* Modal Header Bar with Close Button */}
-            <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100 flex items-center justify-between">
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-[#232D47]">
+            <div className="sticky top-0 z-20 tt-modal-header backdrop-blur-md px-6 py-4 border-b flex items-center justify-between">
+              <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#2B3654] text-[#C3C8D2]">
                 {activeArticle.category}
               </span>
               <button
@@ -753,18 +753,18 @@ const Blog = () => {
               </div>
 
               {/* In-depth Article Paragraphs */}
-              <div className="prose prose-slate max-w-none space-y-5 text-slate-700 text-sm sm:text-base leading-relaxed">
+              <div className="prose max-w-none space-y-5 tt-text-secondary text-sm sm:text-base leading-relaxed">
                 {activeArticle.content.map((para, idx) => (
                   <p key={idx}>{para}</p>
                 ))}
               </div>
 
               {/* Tags in modal */}
-              <div className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap gap-2">
+              <div className="mt-8 pt-6 border-t tt-border-color flex flex-wrap gap-2">
                 {activeArticle.tags.map((t, idx) => (
                   <span
                     key={idx}
-                    className="text-xs px-3 py-1 bg-slate-100 text-slate-600 rounded-lg font-medium"
+                    className="text-xs px-3 py-1 bg-[#2B3654] text-[#C3C8D2] rounded-lg font-medium"
                   >
                     #{t}
                   </span>
@@ -772,12 +772,12 @@ const Blog = () => {
               </div>
 
               {/* Modal footer with action buttons */}
-              <div className="mt-10 p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="mt-10 p-6 rounded-2xl tt-surface-2 border tt-border-color flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div>
-                  <h5 className="text-sm font-bold text-[#232D47]">
+                  <h5 className="text-sm font-bold tt-text-primary">
                     Ready to put this play philosophy into action?
                   </h5>
-                  <p className="text-xs text-slate-500 mt-0.5">
+                  <p className="text-xs tt-text-muted mt-0.5">
                     Explore our pediatrician-vetted, non-toxic toy marketplace.
                   </p>
                 </div>

@@ -5,7 +5,29 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>toytopia</title>
+  <meta name="description" content="Toy-ToPia – A local kids toy marketplace. Discover safe, ASTM-certified, non-toxic, and educational toys crafted by skilled artisans for your little ones." />
+  <meta name="keywords" content="kids toys, safe toys, educational toys, wooden toys, non-toxic toys, children toys Bangladesh" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <title>Toy-ToPia – Safe & Certified Kids Toys Marketplace</title>
+
+  <!-- Theme init: apply before React renders to avoid FOUC (Flash of Unstyled Content) -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem('tt-theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = saved || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 </head>
 
 <body>

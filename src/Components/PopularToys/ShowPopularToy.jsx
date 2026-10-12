@@ -16,9 +16,9 @@ const ShowPopularToy = ({ popularToy }) => {
           />
         </figure>
         <div className="card-body overflow-hidden shrink-0">
-          <h2 className="card-title">
-            {toyName}
-            <div className="badge text-yellow-400 font-bold text-[18px] border-0">
+          <h2 className="card-title flex justify-between items-start gap-2">
+            <span className="flex-1">{toyName}</span>
+            <div className="badge text-yellow-400 font-bold text-[18px] border-0 shrink-0 whitespace-nowrap">
               🏆 {rating}
             </div>
           </h2>

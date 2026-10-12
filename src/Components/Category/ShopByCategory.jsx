@@ -14,7 +14,7 @@ const ShopByCategory = ({ shopCategory }) => {
   );
   //   console.log(uniqueCategories);
   return (
-    <div className="my-28 w-11/12 mx-auto">
+    <div id="category-section" className="my-28 w-11/12 mx-auto scroll-mt-24">
       <div className="header text-center">
         <h1 className="text-5xl font-bold">Shop by Category</h1>
         <p className="text-2xl mt-5">Find the perfect toy by category</p>
